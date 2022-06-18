@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+:root {
+    --cor-de-fundo: #03070D;
+    --cor-1: #0F1926;
+    --cor-2: #274259;
+    --cor-3: #344755;
+    --cor-5: #A8B6BF;
+    --fonte-padrao: 'Poppins', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-color: #55575b #080b11;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cor-de-fundo);
+    font-family: var(--fonte-padrao);
+    color: var(--cor-5);
+}
+  
+#site {
+    padding: 0 60px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+main {
+    display: flex;
+    gap: 30px;
+}
+
+#entrada-de-dados {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+}
+/* Campo de entrada de texto */
+#campo-de-texto {
+    min-width: 300px;
+    max-width: 600px;
+    height: 250px;
+    background-color: var(--cor-1);
+    border: none;
+    border-radius: 15px;
+    padding: 15px 15px 0;
+    resize: none;
+    word-break: break-all;
+    color: var(--cor-5);
+    font: 500 16px var(--fonte-padrao);
+}
+#campo-de-texto:focus {
+    outline: var(--cor-5) solid 2px;
+}
+/* Aviso para o usuário */
+#alerta {
+    display: flex;
+    gap: 10px;
+    min-width: 300px;
+    max-width: 600px;
+    margin: 20px 0 35px 0;
+}
+/* Botões da Interface */
+#botoes-de-acao {
+    display: flex;
+    gap: 25px;
+    min-width: 300px;
+    max-width: 600px;
+}
+#botoes-de-acao button {
+    min-width: 200px;
+    max-width: 300px;
+    min-height: 60px;
+    background-color: var(--cor-2);
+    border: none;
+    border-radius: 15px;
+    font: 600 16px var(--fonte-padrao);
+    color: var(--cor-5);
+    cursor: pointer;
+}
+#botoes-de-acao button:hover {
+    background-color: var(--cor-3);
+}
+
+#saida-de-dados {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#caixa-de-resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+    max-width: 600px;
+    height: 100%;
+    background-color: var(--cor-1);
+    border-radius: 15px;
+    text-align: center;
+}
+#caixa-de-resultado h1 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+hr.separador-1 {
+   margin: 40px 0 60px 0;
+   color: var(--cor-5) ;
+   border-color: var(--cor-5);
+   background-color: var(--cor-5);
+}
+
+aside {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+#social-medias-e-selos {
+    display: flex;
+    gap: 60px;
+}
+#provedores-das-artes {
+    display: flex;
+    flex-direction: column;
+}
+#provedores-das-artes span {
+    margin-bottom: 10px;
+}
+
+#sobre-o-projeto {
+    max-width: 600px;
+}
+#sobre-o-projeto h1 {
+    font-size: 20px;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 60px;
+    background-color: var(--cor-1);
+}
+
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;
+        gap: 45px;
+    }
+    #campo-de-texto {
+        min-width: 100%;
+        max-width: none;
+    }
+    /* Aviso para o usuário */
+    #alerta {
+        min-width: 100%;
+        max-width: none;
+        margin: 20px 0 25px 0;
+    }
+    /* Botões da Interface */
+    #botoes-de-acao {
+        justify-content: space-between;
+        min-width: 100%;
+        max-width: none;
+    }
+    #botoes-de-acao button {
+        min-width: none;
+        max-width: none;
+        width: 100%;
+    }
+
+    #caixa-de-resultado {
+        min-width: 100%;
+        max-width: none;
+        padding: 30px 10px;
+    }
+
+    #caixa-de-resultado img {
+        height: 150px;
+    }
+    #caixa-de-resultado h1 {
+        font-size: 20px;
+    }
+    #caixa-de-resultado p {
+        font-size: 14px;
+    }
+
+    hr.separador-1 {
+        margin-bottom: 40px;
+    }
+
+    #social-medias-e-selos {
+        gap: 30px;
+    }
+    #social-medias-e-selos > a img {
+        height: 80px;
+    }
+    #provedores-das-artes > a img {
+        height: 25px;
+    }
+    #provedores-das-artes span {
+        font-size: 14px;
+    }
+
+    #sobre-o-projeto {
+        max-width: 100%;
+    }
+    #caixa-de-resultado h1 {
+        font-size: 18px;
+    }
+    #sobre-o-projeto p {
+        font-size: 14px;
+    }
+
+    footer {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 880px) {
+
+    aside {
+        flex-direction: column;
+        align-items: center;
+    }
+    #social-medias-e-selos {
+        width: 100%;
+        justify-content: space-evenly;
+    }
+    #sobre-o-projeto p {
+        text-align: justify;
+    }
+}
+@media (max-width: 550px) {
+    #site {
+        padding: 0 30px;
+    }
+    #campo-de-texto {
+        height: 150px;
+    }
+    #botoes-de-acao {
+        flex-direction: column;
+    }
+    #caixa-de-resultado img {
+        height: 130px;
+    }
+    #caixa-de-resultado h1 {
+        font-size: 18px;
+    }
+    #caixa-de-resultado p {
+        font-size: 12px;
+    }
+    #social-medias-e-selos {
+        gap: 10px;
+    }
+    #sobre-o-projeto h1 {
+        font-size: 18px;
+    }
+    #sobre-o-projeto p {
+        font-size: 14px;
+    }
+    footer {
+        font-size: 14px;
+    }
+}
+@media (max-width: 425px) {
+    #alerta {
+        font-size: 14px;
+    }
+    #social-medias-e-selos > a img {
+        height: 60px;
+    }
+    #provedores-das-artes span {
+        font-size: 12px;
+    }
+    #provedores-das-artes > a img {
+        height: 20px;
+    }
+    footer {
+        font-size: 12px;
+    }
+}
+@media (max-width: 320px) {
+    footer {
+        font-size: 11px;
+    }
+}
