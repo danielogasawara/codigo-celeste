@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
 :root {
-    --cor-de-fundo: #03070D;
-    --cor-1: #0F1926;
-    --cor-2: #274259;
-    --cor-3: #344755;
-    --cor-5: #A8B6BF;
+    --cor-de-fundo: 3, 7, 13;
+    --cor-1: 15, 25, 38;
+    --cor-2: 39, 66, 89;
+    --cor-3: 52, 71, 85;
+    --cor-5: 168, 182, 191;
     --fonte-padrao: 'Poppins', sans-serif;
 }
 
@@ -18,23 +18,25 @@
 
 body {
     min-height: 100vh;
-    background-color: var(--cor-de-fundo);
+    background-color: rgb(var(--cor-de-fundo));
     font-family: var(--fonte-padrao);
-    color: var(--cor-5);
+    color: rgb(var(--cor-5));
 }
   
-#site {
-    padding: 0 60px;
+#conteudo-do-site {
+    padding: 40px;
+    min-height: 100vh;
 }
 
 header {
     display: flex;
     justify-content: center;
-    padding: 40px 0;
+    padding-bottom: 40px;
 }
 
 main {
     display: flex;
+    justify-content: space-between;
     gap: 30px;
 }
 
@@ -42,45 +44,44 @@ main {
     display: flex;
     flex-direction: column;
     width: 100%;
-
 }
-/* Campo de entrada de texto */
+
 #campo-de-texto {
-    min-width: 300px;
-    max-width: 600px;
+    max-width: 100%;
     height: 250px;
-    background-color: var(--cor-1);
+    background-color: rgb(var(--cor-1));
     border: none;
     border-radius: 15px;
     padding: 15px 15px 0;
     resize: none;
     word-break: break-all;
-    color: var(--cor-5);
+    color: rgb(var(--cor-5));
     font: 500 16px var(--fonte-padrao);
 }
-#campo-de-texto:focus {
-    outline: var(--cor-5) solid 2px;
+#campo-de-texto::placeholder {
+    color: rgb(var(--cor-5));
 }
-/* Aviso para o usuário */
+#campo-de-texto:focus {
+    outline: rgb(var(--cor-5)) solid 2px;
+}
+
 #alerta {
     display: flex;
+    align-items: center;
     gap: 10px;
-    min-width: 300px;
-    max-width: 600px;
+    max-width: 100%;
     margin: 20px 0 35px 0;
 }
-/* Botões da Interface */
+
 #botoes-de-acao {
     display: flex;
     gap: 25px;
-    min-width: 300px;
-    max-width: 600px;
+    max-width: 100%;
 }
 #botoes-de-acao button {
-    min-width: 200px;
-    max-width: 300px;
+    width: 100%;
     min-height: 60px;
-    background-color: var(--cor-2);
+    background-color: rgb(var(--cor-2));
     border: none;
     border-radius: 15px;
     font: 600 16px var(--fonte-padrao);
@@ -88,7 +89,7 @@ main {
     cursor: pointer;
 }
 #botoes-de-acao button:hover {
-    background-color: var(--cor-3);
+    background-color: rgb(var(--cor-3));
 }
 
 #saida-de-dados {
@@ -101,13 +102,14 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-width: 300px;
-    max-width: 600px;
+    max-width: 100%;
     height: 100%;
-    background-color: var(--cor-1);
+    padding: 30px;
+    background-color: rgb(var(--cor-1));
     border-radius: 15px;
     text-align: center;
 }
+
 #caixa-de-resultado h1 {
     font-size: 24px;
     margin-top: 20px;
@@ -115,9 +117,9 @@ main {
 
 hr.separador-1 {
    margin: 40px 0 60px 0;
-   color: var(--cor-5) ;
-   border-color: var(--cor-5);
-   background-color: var(--cor-5);
+   color: rgb(var(--cor-5)) ;
+   border-color: rgb(var(--cor-5));
+   background-color: rgb(var(--cor-5));
 }
 
 aside {
@@ -126,22 +128,35 @@ aside {
     gap: 30px;
 }
 
-#social-medias-e-selos {
+#sobre-o-projeto-bloco-1 {
     display: flex;
-    gap: 60px;
+    gap: 30px;
 }
-#provedores-das-artes {
+
+#redes-sociais-e-licenca {
+    display: flex;
+    gap: 30px;
+}
+
+#provedores-de-arte {
     display: flex;
     flex-direction: column;
 }
-#provedores-das-artes span {
+#provedores-de-arte p {
     margin-bottom: 10px;
 }
 
-#sobre-o-projeto {
-    max-width: 600px;
+#logos-dos-provedores-de-arte {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
-#sobre-o-projeto h1 {
+
+#sobre-o-projeto-bloco-2 {
+    max-width: 600px;
+    text-align: justify;
+}
+#sobre-o-projeto-bloco-2 h1 {
     font-size: 20px;
 }
 
@@ -150,46 +165,22 @@ footer {
     justify-content: center;
     align-items: center;
     height: 50px;
-    margin-top: 60px;
-    background-color: var(--cor-1);
+    background-color: rgb(var(--cor-1));
 }
 
 @media (max-width: 1024px) {
     main {
         flex-direction: column;
-        gap: 45px;
+        gap: 35px;
     }
-    #campo-de-texto {
-        min-width: 100%;
-        max-width: none;
-    }
-    /* Aviso para o usuário */
+
     #alerta {
-        min-width: 100%;
-        max-width: none;
         margin: 20px 0 25px 0;
     }
-    /* Botões da Interface */
-    #botoes-de-acao {
-        justify-content: space-between;
-        min-width: 100%;
-        max-width: none;
-    }
-    #botoes-de-acao button {
-        min-width: none;
-        max-width: none;
-        width: 100%;
+    #alerta img {
+        height: 20px;
     }
 
-    #caixa-de-resultado {
-        min-width: 100%;
-        max-width: none;
-        padding: 30px 10px;
-    }
-
-    #caixa-de-resultado img {
-        height: 150px;
-    }
     #caixa-de-resultado h1 {
         font-size: 20px;
     }
@@ -201,98 +192,123 @@ footer {
         margin-bottom: 40px;
     }
 
-    #social-medias-e-selos {
-        gap: 30px;
+    aside {
+        flex-direction: column;
+        align-items: center;
     }
-    #social-medias-e-selos > a img {
+    #sobre-o-projeto-bloco-1 {
+        width: 100%;
+        justify-content: space-between;
+    }
+    #sobre-o-projeto-bloco-1 > a img {
         height: 80px;
     }
-    #provedores-das-artes > a img {
+    #redes-sociais-e-licenca {
+        gap: 45px;
+    }
+    #provedores-de-arte > a img {
         height: 25px;
     }
-    #provedores-das-artes span {
+    #provedores-de-arte p {
         font-size: 14px;
     }
 
-    #sobre-o-projeto {
+    #sobre-o-projeto-bloco-2 {
         max-width: 100%;
     }
     #caixa-de-resultado h1 {
         font-size: 18px;
     }
-    #sobre-o-projeto p {
+    #sobre-o-projeto-bloco-2 p {
         font-size: 14px;
     }
+}
 
-    footer {
-        margin-top: 30px;
+@media (max-width: 830px) {
+    #conteudo-do-site {
+        padding-left: 30px;
+        padding-right: 30px;
     }
 }
-@media (max-width: 880px) {
 
-    aside {
-        flex-direction: column;
-        align-items: center;
-    }
-    #social-medias-e-selos {
-        width: 100%;
-        justify-content: space-evenly;
-    }
-    #sobre-o-projeto p {
-        text-align: justify;
-    }
-}
-@media (max-width: 550px) {
-    #site {
-        padding: 0 30px;
-    }
+@media (max-width: 500px) {
+
     #campo-de-texto {
-        height: 150px;
-    }
+        height: 200px;
+    }    
     #botoes-de-acao {
         flex-direction: column;
     }
+
     #caixa-de-resultado img {
-        height: 130px;
+        height: 140px;
     }
     #caixa-de-resultado h1 {
-        font-size: 18px;
+        font-size: 16px;
     }
     #caixa-de-resultado p {
         font-size: 12px;
     }
-    #social-medias-e-selos {
-        gap: 10px;
+
+    #sobre-o-projeto-bloco-1 {
+        display: flex;
+        flex-direction: column;
     }
-    #sobre-o-projeto h1 {
+
+    #redes-sociais-e-licenca {
+        gap: 0;
+        justify-content: space-evenly;
+    }
+    #redes-sociais-e-licenca img {
+        height: 100px;
+    }
+
+    #provedores-de-arte {
+        align-items: center;
+    }
+    #logos-dos-provedores-de-arte {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    #sobre-o-projeto-bloco-2 h1 {
         font-size: 18px;
     }
-    #sobre-o-projeto p {
-        font-size: 14px;
-    }
-    footer {
+    #sobre-o-projeto-bloco-2 p {
         font-size: 14px;
     }
 }
+
 @media (max-width: 425px) {
     #alerta {
         font-size: 14px;
     }
-    #social-medias-e-selos > a img {
+    #sobre-o-projeto-bloco-1 > a img {
         height: 60px;
     }
-    #provedores-das-artes span {
+    #provedores-de-arte p {
         font-size: 12px;
     }
-    #provedores-das-artes > a img {
+    #provedores-de-arte > a img {
         height: 20px;
     }
     footer {
-        font-size: 12px;
+        font-size: 14px;
     }
 }
-@media (max-width: 320px) {
-    footer {
-        font-size: 11px;
+
+@media (max-width: 375px) {
+    #redes-sociais-e-licenca {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    #provedores-de-arte p {
+        font-size: 14px;
+    }
+    #logos-dos-provedores-de-arte {
+        flex-direction: column;
+        align-items: center;
     }
 }
