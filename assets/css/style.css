@@ -94,7 +94,7 @@ main {
     color: var(--cor-5);
     cursor: pointer;
 }
-#botoes-de-acao button:hover {
+#botoes-de-acao button:active {
     background-color: rgb(var(--cor-3));
 }
 
@@ -143,7 +143,7 @@ main {
     font-weight: 800;
     cursor: pointer;
 }
-#botao-copiar-texto:hover {
+#botao-copiar-texto:active {
     background-color: rgba(var(--cor-2), 0.5);
 }
 #titulo-do-resultado {
