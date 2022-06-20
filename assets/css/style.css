@@ -15,6 +15,13 @@
     padding: 0;
     scrollbar-color: #55575b #080b11;
 }
+*::-webkit-scrollbar {
+    background-color: #080b11;
+}
+*::-webkit-scrollbar-thumb {
+   background-color: #55575b;
+}
+
 
 body {
     min-height: 100vh;
@@ -22,7 +29,7 @@ body {
     font-family: var(--fonte-padrao);
     color: rgb(var(--cor-5));
 }
-  
+
 #conteudo-do-site {
     padding: 40px;
     min-height: 100vh;
@@ -52,17 +59,16 @@ main {
     background-color: rgb(var(--cor-1));
     border: none;
     border-radius: 15px;
-    padding: 15px 15px 0;
+    padding: 20px;
     resize: none;
-    word-break: break-all;
     color: rgb(var(--cor-5));
-    font: 500 16px var(--fonte-padrao);
-}
-#campo-de-texto::placeholder {
-    color: rgb(var(--cor-5));
+    font: normal 16px var(--fonte-padrao);
 }
 #campo-de-texto:focus {
     outline: rgb(var(--cor-5)) solid 2px;
+}
+#campo-de-texto::-webkit-scrollbar {
+    cursor: default;
 }
 
 #alerta {
@@ -99,18 +105,48 @@ main {
 }
 
 #caixa-de-resultado {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
+    width: 100%;
     height: 100%;
-    padding: 30px;
+    padding: 20px;
     background-color: rgb(var(--cor-1));
     border-radius: 15px;
     text-align: center;
 }
 
-#caixa-de-resultado h1 {
+#sem-texto-processado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+#com-texto-processado {
+    display: none;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+    justify-content: space-between;
+
+}
+
+#texto-processado {
+    text-align: left;
+    word-break: break-all;
+    max-height: 250px;
+    overflow-y: auto;
+}
+#botao-copiar-texto {
+    padding: 12px 0;
+    border: solid 2px rgb(var(--cor-5));
+    border-radius: 15px;
+    color: rgb(var(--cor-5));
+    background-color: transparent;
+    font-weight: 800;
+    cursor: pointer;
+}
+#botao-copiar-texto:hover {
+    background-color: rgba(var(--cor-2), 0.5);
+}
+#titulo-do-resultado {
     font-size: 24px;
     margin-top: 20px;
 }
@@ -172,6 +208,7 @@ footer {
     main {
         flex-direction: column;
         gap: 35px;
+        max-height: 100%;
     }
 
     #alerta {
@@ -232,7 +269,6 @@ footer {
 }
 
 @media (max-width: 500px) {
-
     #campo-de-texto {
         height: 200px;
     }    
@@ -240,13 +276,13 @@ footer {
         flex-direction: column;
     }
 
-    #caixa-de-resultado img {
+    #imagem-do-resultado {
         height: 140px;
     }
-    #caixa-de-resultado h1 {
+    #titulo-do-resultado {
         font-size: 16px;
     }
-    #caixa-de-resultado p {
+    #descricao-do-resultado {
         font-size: 12px;
     }
 
@@ -279,7 +315,6 @@ footer {
         font-size: 14px;
     }
 }
-
 @media (max-width: 425px) {
     #alerta {
         font-size: 14px;

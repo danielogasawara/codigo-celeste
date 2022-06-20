@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon/favicon-16x16.png">
@@ -24,18 +24,25 @@
         </header>
         <main>
             <div id="entrada-de-dados">
-                <textarea name="campo-de-texto" id="campo-de-texto" placeholder="Insira o texto aqui..."></textarea>
+                <textarea name="campo-de-texto" id="campo-de-texto" placeholder="Insira o texto aqui..." spellcheck="false"></textarea>
                 <p id="alerta"><img src="assets/images/svg/alert.svg" alt="Aviso utilize somente letras minusculas e sem acento.">Utilize somente letras minusculas e sem acento.</p>
                 <div id="botoes-de-acao">
-                    <button>Criptografar</button>
-                    <button>Descriptografar</button>
+                    <button onclick="criptografaTexto()">Criptografar</button>
+                    <button onclick="descriptografaTexto()">Descriptografar</button>
                 </div>
             </div>
             <div id="saida-de-dados">
                 <div id="caixa-de-resultado">
-                    <img src="assets/images/svg/onca-1.svg" alt="" width="auto" height="200px">
-                    <h1>Oi meu chapa...</h1>
-                    <p>Escreve alguma coisa ali do lado para começar.</p>
+                    <div id="sem-texto-processado">
+                        <img id="imagem-do-resultado" src="assets/images/svg/onca-1.svg" alt="Onça sentatada esperando você escrever algo lá na caixa de texto." width="auto" height="200px">
+                        <h1 id="titulo-do-resultado">Oi meu chapa...</h1>
+                        <p id="descricao-do-resultado">Escreve alguma coisa ali para começar.</p>
+                    </div>
+                    <div id="com-texto-processado">
+                        <p id="texto-processado">
+                        </p>
+                        <button id="botao-copiar-texto" onclick="copiaTexto()">COPIAR TEXTO</button>
+                    </div>
                 </div>
             </div>
         </main>
@@ -63,5 +70,6 @@
     <footer>
         <p>Copyright &copy; 2022 Daniel Ogasawara</p>
     </footer>
+    <script src="assets/js/scripts.js"></script>
 </body>
 </html>
